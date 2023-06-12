@@ -10,6 +10,7 @@ async function fetchProducts() {
 }
 
 window.onload = function() {
+    console.log('https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes')
     var resultadosHTML = '';
     var resultados = JSON.parse(localStorage.getItem('resultadosPesquisa'));
     if (resultados) {

@@ -30,21 +30,20 @@ let products_shoes = 'https://diwserver.vps.webdock.cloud/products/category/Foot
 
 function realizarPesquisa() {
     var pesquisaInput = document.getElementById('pesquisaInput').value;
-    var url = 'https://diwserver.vps.webdock.cloud/products/search?query=' + encodeURIComponent(pesquisaInput);
+    var url = products_shoes;
 
-
+    window.location.href = 'Pesquisa.html?query=zz';
     fetch(url)
         .then(response => response.json())
-        .then(data => exibirResultados(data));
+        .then(data => exibirResultados(data.products, pesquisaInput));
     localStorage.setItem('resultadosPesquisa', JSON.stringify(data));
 }
 
-function exibirResultados() {
+function exibirResultados(resultados) {
+
     for (var i = 0; i < resultados.length; i++) {
         criarCard(resultados[i]);
     }
-
-    window.location.href = 'Pesquisa.html?query=' + encodeURIComponent(pesquisaInput);
 }
 
 function criarCard(products_shoes) {
@@ -57,19 +56,3 @@ function criarCard(products_shoes) {
     </div>`
         ;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
