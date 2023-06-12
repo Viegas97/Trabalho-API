@@ -21,6 +21,10 @@ function updateCards(products) {
     }
 }
 
+//var botao = document.getElementById('botao-pesquisa');
+//botao.addEventListener('click', teste);
+
+
 fetchProducts()
     .then(products => {
         updateCards(products.products);
@@ -28,15 +32,12 @@ fetchProducts()
 
 let products_shoes = 'https://diwserver.vps.webdock.cloud/products/category/Footwear - Shoes'
 
+
+
 function realizarPesquisa() {
     var pesquisaInput = document.getElementById('pesquisaInput').value;
-    var url = products_shoes;
-
-    window.location.href = 'Pesquisa.html?query=zz';
-    fetch(url)
-        .then(response => response.json())
-        .then(data => exibirResultados(data.products, pesquisaInput));
-    localStorage.setItem('resultadosPesquisa', JSON.stringify(data));
+    console.log('zz')
+    window.location.href = 'Pesquisa.html?query=' + pesquisaInput;
 }
 
 function exibirResultados(resultados) {

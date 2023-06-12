@@ -23,13 +23,13 @@ window.onload = function() {
     resultadosContainer.innerHTML = resultadosHTML;
 };
 
-function criarCardProduto(produto) {
-    var cardHTML = `
-        <div class="card">
-            <img src="${produto.imagem}" alt="${produto.nome}">
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-        </div>
-    `;
-    return cardHTML;
+function criarCard(products_shoes) {
+    let resultados = document.getElementById(resultados);
+
+    resultados.innerHTML += `<div class="card">
+        <img src="${products_shoes.imagem}" alt="${products_shoes.nome}">
+        <h3>${products_shoes.nome}</h3>
+        <p>${products_shoes.descricao}</p>
+    </div>`
+        ;
 }
